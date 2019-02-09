@@ -1,0 +1,60 @@
+\documentclass[a4paper,twosided,justified,nobib]{tufte-book}
+
+\hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
+
+%%
+% Book metadata
+\title{Robot Apocolypses Averted}
+\author{Z. Irene Ying and Jordan Boyd-Graber}
+\publisher{University of Maryland}
+
+%%
+% If they're installed, use Bergamo and Chantilly from www.fontsite.com.
+% They're clones of Bembo and Gill Sans, respectively.
+%\IfFileExists{bergamo.sty}{\usepackage[osf]{bergamo}}{}% Bembo
+%\IfFileExists{chantill.sty}{\usepackage{chantill}}{}% Gill Sans
+
+%\usepackage{microtype}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{figures/}}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+%%
+% Prints a trailing space in a smart way.
+\usepackage{xspace}
+
+
+\input{preamble}
+
+% Generates the index
+\usepackage{makeidx}
+\makeindex
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
+\begin{document}
+
+% Front matter
+
+\frontmatter
+
+\input{chapters/00-frontmatter}
+\input{chapters/10-intro}
+\input{chapters/example}
+
+
+\backmatter
+
+\bibliography{bib/jbg}
+\bibliographystyle{apalike}
+
+
+\printindex
+
+\end{document}
+
