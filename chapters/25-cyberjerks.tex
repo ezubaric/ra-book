@@ -7,9 +7,61 @@ We first introduce a key component of machine learning---objective functions---t
 
 \section{Learning by Doing: Objective Functions}
 
+An algorithm does not just say ``yes'' or ``no'' to whether an e-mail
+is spam.  It typically gives a score for each e-mail: the higher the
+score, the more confident it is the e-mail is spam.  For the moment,
+let's assume that all of the numbers are between zero and one (e.g.,
+they are a probability).
+
+A perfect score would be if all spam e-mails got a 1.0 and all of the
+good e-mails got 0.0.  Both perfection and absolute certainty are
+unattainable goals, so we need to deal with both errors and
+uncertainty.  So we sum all of the spam documents and see how far the
+scores are from 1.0, and we sum all of the good e-mails and see how
+far the scores are from 0.0.  This sum is our \emph{objective
+  function}: a perfect score is 0.0 and the worst score is the number
+of e-mails.
+
+Machine learning algorithms are defined by \emph{parameters}.  For
+example, a parameter might define what the algorithm does when it sees
+the word ``viagra'' or the phrase ``I am a Nigerian prince''.  These
+parameters effectively define the algorithm; machine learning
+algorithms learn how to set these parameters from data, a process that
+can take multiple names,\footnote{Some of the alternate names are
+  field specific; for example, in statistics this is called inference
+  and the objective function is typically called the likelihood.
+  However, the mechanics are similar.  For some applications, it's
+  called a ``loss function'', but we'll stick with the more general
+  term.} but we'll call it ``optimization''.
+
 \subsection{Optimization}
 
+Optimization is the process where machine learning uses data to find
+the parameters that give the best score on the objective function.
+Typically, the process starts with a random setting of the parameters.
+This will do \emph{horribly}, but it provides a place to start: the
+early improvements will be easy.
+
+The learning process will slowly change the parameters to ever so
+slightly improve the objective function.\footnote{Mathematically, this
+  is usually by looking at the gradient of the objective function with
+  respect to the parameters.}  The learning process goes document by
+document to slowly improve the objective function.  Eventually, modern
+optimization techniques find a setting of the parameters that work
+well for this problem.\footnote{The form of the objective function
+  determines whether this answer will be the best possible or merely a
+  ``good'' solution.}
+
+All of this seems fairly straightforward, but there is some art to
+creating these systems.  Defining the parameters requires a bit of
+expertise: either hand-crafting parameters that fit the problem well
+or using automatic approaches that learn effective representations.
+Doing this well requires quite a bit of work, and often your first
+(and second, etc.) attempt will usually fail.
+
 \subsection{Is this Artificial Intelligence?}
+
+
 
 \subsection{Training Data}
 
