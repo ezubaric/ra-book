@@ -28,6 +28,7 @@ already happening!).  Finally, we close the chapter with a call to
 action: keep your computers safe!
 
 \section{Learning by Doing: Objective Functions}
+\label{sec:objective-functions}
 
 Let us begin with an essential and underappreciated example of machine
 learning that simply works and makes modern life liveable: spam
@@ -98,16 +99,38 @@ Doing this well requires quite a bit of work, and often your first
 
 \subsection{Is this Artificial Intelligence?}
 
-You might be skeptical about whether this is actually artificial
-intelligence.  We have a function and we are optimizing the
-parameters.  Whether this is actually \emph{intelligence} is
-debateable.
+A reasonable question is whether this is \emph{intelligence}.  Before
+we get into the nuance of the question, the answer---given the systems
+we have discussed---is definitely \textbf{no}.  But because we'll
+discuss things that \emph{are} artificial intelligence later in the
+book, it's useful to discuss what it means for a system to be
+intelligent now.  This way, we can at least see why these systems are
+not intelligent.
 
-A skeptic would point out that this is a mechanical mathematical
-exercise.  The algorithm that decides whether an e-mail is spam or not
-doesn't actually understand what it's reading, and the parameters were
-defined by a human.  While the values of the parameters come from
-data, there's no real learning going on.
+In some ways, impressive achievements in technology is a moving
+target.  After a few decades of living with machines that do a
+formerly impressive task, we cease to be impressed by it and its
+comparison to humans.\footnote{This is not just for intelligence;
+  \song{The Ballad of John Henry} celebrates a competition between a
+  steam drill and ``a man who ain't nothing but a man\dots with a
+  hammer in [his] hand.''  Today, such comparisons and competitions
+  seem silly.}  The luster of adding machines has faded into beige
+quotidian boringness through the twentieth century.
+
+Even in my own life, my excitement about halfway decent speech
+recognition---taking a stream of speech and transcribing it into words
+on a screen---has given way to annoyance at my phones' (increasingly
+rare) mistakes.  Both of these were considered tasks that only humans
+could do\footnote{The term ``computer'' originally referred to
+  specially trained humans proficient at high-stakes, accurate
+  calculations.} but now are so ubiquitous that half of humanity is
+joined at the hip to devices that do both these things.
+
+A skeptic would say that machine learning is a mere mechanical
+mathematical exercise.  The algorithm that decides whether an e-mail
+is spam or not doesn't actually understand what it's reading, and the
+parameters were defined by a human.  While the values of the
+parameters come from data, there's no real learning going on.
 
 A proponent would counter that intelligence is actually a combination
 of many smaller processes.  To understand an e-mail, we need to
@@ -143,11 +166,37 @@ hungry.  They can always do better, but they can only do better at the
 cost of additional training data: if you see input~$x$, what should
 your output~$y$ be?
 
-These training data have to come from somewhere.  
+However, many tasks can be framed as mechanical calculations; they
+do not require abstract reasoning or generalization what people today
+consider ``intelligence''.  More specifically, they requires hundreds
+or thousands of examples to know what to do.  \energyJerk{} is a
+prolific demonstrator of what (not) to do.  A human could learn
+\energyJerk{}'s tricks from a high-level description.  An algorithm
+learns to copy. 
+
+This simple mimicry can seem sophisticated.  It's couched in terms
+that sound sophisticated but only facilitate superficial copying
+(Figure~\ref{fig:la-ml}).  \energyCompany{} has a relatively simple
+objective function to optimize: are people buying its
+software or not?  If sales go up, it's good.  If sales go down, it's
+bad.  Optimizing this function without any help is a difficult problem
+(this is why \textsc{ceo}s are paid so much), but \energyCompany{}
+doesn't have to do it alone: it learned it from \energyJerk{}.
+
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{figures/xkcd-la-ml}
+  \caption{Much of ``Machine Learning'' is copying in the form of
+    complicated equations defined by mathematical formulas using fancy
+    words like ``linear algebra'', ``gradients'', and ``nonconvex optimization''.}
+  \label{fig:la-ml}
+\end{marginfigure}
 
 \section{Humans are Jerks}
 
-Redlining
+\quoted{Everybody's a jerk.  You, me, that jerk over there\dots
+  That's my philosophy.}{Bender Bending Rodriguez, \series{Futurama}: \episode{I, Roomate}}
+
+
 
 \subsection{I Learned it from You!}
 
