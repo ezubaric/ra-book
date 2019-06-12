@@ -1,4 +1,8 @@
 
+% Macros for character names
+% Should probably move to the actual fiction chapter
+\newcommand{\salesjerk}[0]{Levi}
+
 \chapter{AI can be Jerks: Learning from the Best}
 
 The previous story saw our protagonist start her carrer, and our
@@ -67,13 +71,23 @@ early improvements will be easy.
 
 The learning process will slowly change the parameters to ever so
 slightly improve the objective function.\footnote{Mathematically, this
-  is usually by looking at the gradient of the objective function with
+  is usually by looking at the derivative (if you remember that from your calculus class) of the objective function with
   respect to the parameters.}  The learning process goes document by
 document to slowly improve the objective function.  Eventually, modern
 optimization techniques find a setting of the parameters that work
 well for this problem.\footnote{The form of the objective function
   determines whether this answer will be the best possible or merely a
   ``good'' solution.}
+
+Let's take a concrete example.  Let's say that we have an e-mail that
+includes the phrase ``special offer'' and the algorithm says that it
+is spam with score 0.7.  This is a spam e-mail, so the algorithm could
+do better in terms of its objective function if the parameter
+associated with the phrase ``special offer'' were more strongly
+associated with spam.  So our optimization will push the parameter a
+little more in that direction so that the score is 0.75 the next time
+it sees a similar document.  This continues until the parameters
+cannot get any better.
 
 All of this seems fairly straightforward, but there is some art to
 creating these systems.  Defining the parameters requires a bit of
@@ -84,9 +98,52 @@ Doing this well requires quite a bit of work, and often your first
 
 \subsection{Is this Artificial Intelligence?}
 
+You might be skeptical about whether this is actually artificial
+intelligence.  We have a function and we are optimizing the
+parameters.  Whether this is actually \emph{intelligence} is
+debateable.
 
+A skeptic would point out that this is a mechanical mathematical
+exercise.  The algorithm that decides whether an e-mail is spam or not
+doesn't actually understand what it's reading, and the parameters were
+defined by a human.  While the values of the parameters come from
+data, there's no real learning going on.
+
+A proponent would counter that intelligence is actually a combination
+of many smaller processes.  To understand an e-mail, we need to
+understand parts of speech, syntax, discourse, and pragmatics.  Each
+of these can be thought of as individual problems like spam
+classification.  Each one is mechanistic, but together they form a
+process that can be viewed as intelligent.
+
+For the moment, we will leave the debate there.
+Chapter~\ref{chap:gai} takes up the question about what it means to be
+intelligent and how to measure the intelligence of algorithms.
+
+Nevertheless, machine learning has earned the reputation of being
+``artificial intelligence that works''.  Its mechanistic definition is
+a virtue: it is easy to see what works and what does not.  Just as the
+objective function allows the algorithm to tune individual parameters
+to improve a single task, the clear defintion allows researchers to
+tweak problems, models, and data to get better at important tasks.
+
+Machine learning has dones well at many tasks\dots
 
 \subsection{Training Data}
+
+This machine learning setup,\footnote{Formally, this setup is called
+  \emph{supervised machine learning}, where there are specific
+  input--output examples the algorithm must replicate.  Unsupervised
+  machine learning is another active area of research, but it is much
+  harder to see when things are working well.  We talk about
+  applications and evaluations of unsupervised machine learning in
+  Section~\ref{sec:unsup}} however, only works with generous training
+data.  Modern machine learning algorithms are also notoriously data
+hungry.  They can always do better, but they can only do better at the
+cost of additional training data: if you see input~$x$, what should
+your output~$y$ be?
+
+These training data have to come from somewhere.  
 
 \section{Humans are Jerks}
 
