@@ -197,6 +197,9 @@ doesn't have to do it alone: it learned it from \energyJerk{}.
   my philosophy.}{Bender Bending Rodriguez, \series{Futurama}:
   \episode{I, Roomate}}
 
+\TODO{malice, discrimination, bias are getting used a lot.  Find a
+  term and stick to it.}
+
 Presumably I don't need to convince you that humans can be jerks.
 Instead, I want to convince you that humans can create systematic,
 predictable jerkitude that can be carried on, emulated, and perfected
@@ -227,10 +230,139 @@ help decide whether or not to give a family a loan for a house.
 
 \subsection{I Learned it from You!}
 
+Machine learning algorithms learn from examples.  \energyJerk{}'s
+monkeying with the power grid, bankers denying every minority
+borrower, or old boys' networks who only hire from ivy leage
+schools~\cite{}.  Just as humans can justify their actions through
+\energyCompany{}'s virtuous mission, preserving neighborhoods, or
+preserving a company's culture, machine learning algorithms can
+``justify'' their actions with a veneer of respectability.
 
+An algorithm has no prejudice or ill intent---it after all lacks
+intelligence.  But that doesn't mean that it cannot recapitulate the
+malice that it ``learns'' by recreating man's inhumanity to
+man.\footnote{I was going to document that this is a reference to
+  \book{The Dirge} by Robert Burns, but in documenting that, I learned
+  that this phrase might have itself been a reference to 1673's
+  \book{The Whole Duty of Man According to the Law of Nature} by von
+  Pufendorf.}
+
+One of machine learning's strengths is that it can discover surprising
+correlations: e-mails sent at this hour from town are often spam,
+people stop talking about the future when they're ending a
+relationship.  This strength can conceal when a machine learning
+algorithm is doing something it ``shouldn't''.\footnote{Again, these
+  algorithms are too dumb to have a morality; this judgement is an
+  external one based on society's mores.}
+
+Take the case of redlining again.  The algorithm may not know the race
+of loan applicants.  But it might know their current address, age,
+occupation, and name.  That is often enough to infer the race of an
+applicant and from that can replicate past humans' prejudice while
+giving current humans the excuse of ``I'm just doing what the machine
+says''.
+
+This is not just an academic discussion.  It is the subject of a
+subfield of machine learning focusing on fairness, accountability,
+transparency, and ethics (\abr{fate}).  \TODO{Find examples, cite
+  them.}
 
 \subsection{Prevention is Tough}
 
+Preventing these issues is difficult.  It requires detecting malice in
+humans, understanding what factors lead to the malice, and then
+especially engineering your machine learning algorithm to avoid that
+malice.  Organizations can deliberately obfuscate their malice or
+inadvertently overlook it (e.g., they don't know the history of their
+data).
+
+Legal regimes may be a mechanism for preventing algorithmic
+discrimination.  For example, the price of insurance can only be based
+on age.  Limiting the data that an algorithm can use prevents it from
+finding obscure correlations but also prevents the algorithm from
+doing anything useful that could, say, lower overall healthcare costs.
+These tradeoffs might be worth making, however.
+
+Rich Caruna argues that you should not hide sensitive features to
+eliminate bias.  Instead, he argues that you should explicitly include
+that data and prevent it from being part of important decisions.
+Other, more nuanced models, argues for preventing ``dispirate
+impace'': \TODO{add citations and definition}.
+
 \section{Practicing Good Technology Hygene}
 
-Stuxnet
+Let's focus, however, on \energyJerk{}'s particular bag of tricks.
+\energyCompany{}'s algorithm was only able to recreate the jerk by
+having access to machines and devices that it shouldn't.
+
+Stuxnet is an example of how far this can go.
+
+Machine learning is fast, efficient, and scalable.  The same artisinal
+mischief that human jerks can do locally, machine learning can
+instantly reproduce globally.  
+
+\subsection{Today's Cybersecurity Crisis}
+
+The world of \series{Battlestar Galactica} provides a useful example.
+They needed computers for jumps and had plenty of electronics.  They
+religiously made sure that computers were never ever linked
+together.\footnote{The downfall of the colonies was Gaius Baltar
+  circumventing these preventative measures.}
+
+However, in the early twenty-first century, every device is linked to
+an insecure internet.  The ``Internet of things'' movement has
+proliferated the devices that are connected to the Internet:
+refrigerators, exercise machines, cars, and medical equipment.  These
+gadgets are catnip to Yuppies who live in places like \crunchyCity{}.
+And let's face it, they can do some cool stuff.
+
+But we created the devices before we made our homes and Internet ready
+for them.  Ideally, each home should be a nice, insulated environments
+with controlled entry and exit.  Just like you wouldn't leave your
+front door open all day and all night, you would not let anyone in the
+world potentially fiddle with the gadgets in your home.  
+
+The Internet was designed as a place where everyone could be trusted.
+
+This might be okay if the underlying devices were secure\dots they're
+not.  \TODO{Give lots of examples}
+
+Thus, human jerks can create all sorts of mischief.  They can spy on
+you, remotely hijack your car, and steal your money.  \TODO{Embelish
+  with details}
+
+Unfortunately, neither consumers nor companies really see the problem.
+
+Eventually, big firms might be coerced into doing something by the threat of litigation.
+
+But as long as the Internet remains as it is, we'll be as vulnerable as the weakest link.
+
+\subsection{Securing the Beachheads}
+
+I suspect that the only long-term solution is legislation.
+
+Doing it right is difficult for multiple reasons.
+
+Unintended consequences.
+
+Regulatory capture.
+
+Things move fast.
+
+\subsection{But what about Artificial Intelligence?}
+
+The astute reader has probably noticed that very little in this
+section has to do with \abr{ai} per se.  It's more about preventing
+the everyday jerks from screwing with our lives.
+
+The same good digital hygine that protects us from the common jerk
+also prevents the scaled-up, fast-paced epidemic of \abr{ai}-driven terror.  
+
+This is why when a student comes to me who is interested in computers
+and has no idea what to do, I don't steer them to the bright shiny
+field of \abr{ai} (where I work) but rather to cybersecurity.  It is
+perhaps not as sexy, but it is what will avert the first robot apocolypse.
+
+But frankly, these computers are pretty dumb.  What happens when they
+get a little smarter\dots something that could actually be considered
+{\bf intelligent}?
