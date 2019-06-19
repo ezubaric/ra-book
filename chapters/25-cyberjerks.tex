@@ -206,8 +206,10 @@ predictable jerkitude that can be carried on, emulated, and perfected
 by machine learning.
 
 Let's take a specific example of institutionalized jerkdom: redlining.
-Redlining is the practice that excluded Americans of some racial
-backgrounds (mostly Black Americans) from specific neighborhoods.
+Redlining is the practice that prevented mortgages from being issued
+to specific neighborhoods: its name came from the maps created for
+Chicago's Austin neighborhood~\cite{pogge-92}.
+The neighborhoods excluded from lending were typically minority-majority.
 This was a despicable practice and even though it has ostensibly
 ended, it has persistent effects on familial wealth, education, voting
 redistricting, and segregation.
@@ -266,6 +268,42 @@ This is not just an academic discussion.  It is the subject of a
 subfield of machine learning focusing on fairness, accountability,
 transparency, and ethics (\abr{fate}).  \TODO{Find examples, cite
   them.}
+
+One of the lessons learned from the redlining debacle is how to
+characterize these poor outcomes.  It's often worthwhile to
+distinguish disparate impacts vs. disparate
+treatment~\cite{hillier-03}.
+
+\subsection{Objective Function Mismatch}
+
+Another lesson from \energyCompany{}'s choices is their objective
+function: optimizing sales.  A die-hard skeptic of capitalism might
+say that this is an iherent failing of a free market system, but these
+problems are also present in planned economies~\cite{zuaberman-65}:
+but the objective function is being applied to a sprawling country
+instead of an individual.\footnote{\book{Red
+    Plenty}~\cite{spufford-10} is an academic/fiction mashup much like
+  this book that realizes the the dream of a planned economy with
+  high-tech information technology.  In real life, even Trotsky
+  recognized that central planning ``is checked and, to a considerable
+  degree, realized through the market.'' \TODO{Find better citation
+    than
+    https://www.marxists.org/archive/trotsky/1932/10/sovecon.htm}}
+
+Objective functions can seem reasonable at first blush but fail in
+reality.  In New York City, the \abr{rand} corporation helped optimize
+fire station placement and staffing based on minimizing response
+time.  This was already recorded and seems reasonable: you cannot put
+out a fire until the first fire truck gets there.
+
+However, \citet{floot-11} in \book{The Fires: How a Computer Formula,
+  Big Ideas, and the Best of Intentions Burned Down New York City--and
+  Determined the Future of Cities} argues that this led to poor
+outcomes for New York: not everyone called in fires at the same rate
+(or as quickly after a fire starts).  Not all calls are equal: it's
+okay if you wait to address a false alarm in favor of a blazing
+inferno.  Moreover, the first response isn't the whole story: what
+actually matters is protecting life and property.  
 
 \subsection{Prevention is Tough}
 
@@ -440,3 +478,19 @@ perhaps not as sexy, but it is what will avert the first robot apocolypse.
 But frankly, these computers are pretty dumb.  What happens when they
 get a little smarter\dots something that could actually be considered
 {\bf intelligent}?
+
+
+\clearpage
+
+\section{Recommended Reading}
+
+
+\begin{itemize}
+
+  \item \citet{spufford-10}: \book{The Fires: How a Computer Formula,
+      Big Ideas, and the Best of Intentions Burned Down New York
+      City--and Determined the Future of Cities}
+
+  \item Cosma Shalizi: \href{http://crookedtimber.org/2012/05/30/in-soviet-union-optimization-problem-solves-you/}{In Soviet Union, Optimization Problem Solves You}
+
+\end{itemize}
