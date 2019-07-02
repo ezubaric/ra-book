@@ -6,7 +6,7 @@
 \chapter{AI can be Jerks: Learning from the Best}
 
 The previous story saw our protagonist start her carrer, and our
-essays will begin with foundational material.  What a lay user needs
+essays will also begin with foundational material: what a lay user needs
 to understand what's happening in the story and how realistic it is.
 We'll save the more fanciful and complicated stuff for later chapters.
 
@@ -44,8 +44,8 @@ they are a probability).
 A perfect score would be if all spam e-mails got a 1.0 and all of the
 good e-mails got 0.0.  Both perfection and absolute certainty are
 unattainable goals, so we need to deal with both errors and
-uncertainty.  So we sum all of the spam documents and see how far the
-scores are from 1.0, and we sum all of the good e-mails and see how
+uncertainty.  So we sum all of the spam documents---how far the
+scores are from 1.0---and we sum all of the good e-mails---how
 far the scores are from 0.0.  This sum is our \emph{objective
   function}: a perfect score is 0.0 and the worst score is the number
 of e-mails.
@@ -80,8 +80,8 @@ well for this problem.\footnote{The form of the objective function
   determines whether this answer will be the best possible or merely a
   ``good'' solution.}
 
-Let's take a concrete example.  Let's say that we have an e-mail that
-includes the phrase ``special offer'' and the algorithm says that it
+Let's take a concrete example.  Let's say that this is the first
+e-mail the algorithm has seen with the phrase ``special offer'' and the algorithm says that it
 is spam with score 0.7.  This is a spam e-mail, so the algorithm could
 do better in terms of its objective function if the parameter
 associated with the phrase ``special offer'' were more strongly
@@ -123,7 +123,10 @@ on a screen---has given way to annoyance at my phones' (increasingly
 rare) mistakes.  Both of these were considered tasks that only humans
 could do\footnote{The term ``computer'' originally referred to
   specially trained humans proficient at high-stakes, accurate
-  calculations.} but now are so ubiquitous that half of humanity is
+  calculations.  \citet{light-99} documents how labor shortages during
+World War II increasingly a female profession.  However, like the
+protagonists of \book{Hidden Figures} by Margot Lee Shetterly, the
+women remain in the background.} but now are so ubiquitous that half of humanity is
 joined at the hip to devices that do both these things.
 
 A skeptic would say that machine learning is a mere mechanical
@@ -150,14 +153,32 @@ objective function allows the algorithm to tune individual parameters
 to improve a single task, the clear defintion allows researchers to
 tweak problems, models, and data to get better at important tasks.
 
-Machine learning has dones well at many tasks\dots
+Machine learning has dones well at many tasks: identifying objects in
+a picture~\citep{russakovsky-15}, playing
+games~\citep{vinyals2017starcraft}, answering
+questions~\citep{ferruci-10}, and driving cars~\citep{thrun-10}.
+%
+These tasks are impressive, but each task is a composition of smaller objective
+functions.
+%
+As we move into ``real'' artificial intelligence, these objective
+functions will play an outsized role.
+%
+While the underlying mechanism here is relatively dumb, it is worth
+grappling with the important questions of defining a good objective
+function.
 
 \subsection{}
 
-In our example in \crunchyCity{}, the objective function is typically aligned with business goals.
-For \energy Company{}, this could be the number of new subscribers, revenue, or profits.
-Other companies have different objectives.
-Many web sites optimize engagement, while logistics companies want to minimize travel time.
+In our example in \crunchyCity{}, the objective function is typically
+aligned with business goals.
+%
+For \energyCompany{}, this could be the number of new subscribers,
+revenue, or profits.
+%
+Other companies have different objectives:
+many web sites optimize engagement~\citep{hoiles-17}, while logistics
+companies want to minimize travel time given promises made to customers~\citep{fiat-16}.
 
 
 
@@ -217,7 +238,7 @@ by machine learning.
 Let's take a specific example of institutionalized jerkdom: redlining.
 Redlining is the practice that prevented mortgages from being issued
 to specific neighborhoods: its name came from the maps created for
-Chicago's Austin neighborhood~\cite{pogge-92}.
+Chicago's Austin neighborhood~\citep{pogge-92}.
 The neighborhoods excluded from lending were typically minority-majority.
 This was a despicable practice and even though it has ostensibly
 ended, it has persistent effects on familial wealth, education, voting
@@ -244,7 +265,7 @@ help decide whether or not to give a family a loan for a house.
 Machine learning algorithms learn from examples.  \energyJerk{}'s
 monkeying with the power grid, bankers denying every minority
 borrower, or old boys' networks who only hire from ivy leage
-schools~\cite{}.  Just as humans can justify their actions through
+schools~\citep{}.  Just as humans can justify their actions through
 \energyCompany{}'s virtuous mission, preserving neighborhoods, or
 preserving a company's culture, machine learning algorithms can
 ``justify'' their actions with a veneer of respectability.
@@ -275,29 +296,30 @@ says''.
 
 This is not just an academic discussion.  It is the subject of a
 subfield of machine learning focusing on fairness, accountability,
-transparency, and ethics (\abr{fate}).  \TODO{Find examples, cite
-  them.}
+transparency, and ethics (\abr{fate}).
+%
+This subfield focuses on making machine learning more
+understandable~\citep{DoshiVelez-17} and quantifying
+unfairness~\citep{speicher-18}.
 
 One of the lessons learned from the redlining debacle is how to
 characterize these poor outcomes.  It's often worthwhile to
 distinguish disparate impacts vs. disparate
-treatment~\cite{hillier-03}.
+treatment~\citep{hillier-03}.
 
 \subsection{Objective Function Mismatch}
 
 Another lesson from \energyCompany{}'s choices is their objective
 function: optimizing sales.  A die-hard skeptic of capitalism might
 say that this is an iherent failing of a free market system, but these
-problems are also present in planned economies~\cite{zuaberman-65}:
+problems are also present in planned economies~\citep{moroney-97}:
 but the objective function is being applied to a sprawling country
 instead of an individual.\footnote{\book{Red
-    Plenty}~\cite{spufford-10} is an academic/fiction mashup much like
+    Plenty}~\citep{spufford-10} is an academic/fiction mashup much like
   this book that realizes the the dream of a planned economy with
   high-tech information technology.  In real life, even Trotsky
   recognized that central planning ``is checked and, to a considerable
-  degree, realized through the market.'' \TODO{Find better citation
-    than
-    https://www.marxists.org/archive/trotsky/1932/10/sovecon.htm}}
+  degree, realized through the market''~\citep{trotsky-32}.}
 
 Objective functions can seem reasonable at first blush but fail in
 reality.  In New York City, the \abr{rand} corporation helped optimize
@@ -333,39 +355,68 @@ These tradeoffs might be worth making, however.
 Rich Caruna argues that you should not hide sensitive features to
 eliminate bias.  Instead, he argues that you should explicitly include
 that data and prevent it from being part of important decisions.
-Other, more nuanced models, argues for preventing ``dispirate
-impace'': \TODO{add citations and definition}.
+Other, more nuanced models, argue for adapting the ``disparate
+impact'' from the legal world into machine learning~\citep{feldman-15}:
+scrub a dataset so that information about protected classes (race,
+gender, age, etc.) do not leak into parameters that can be used by a
+machine learning algorithm.
 
-\section{Practicing Good Technology Hygene}
+\subsection{Today's Cybersecurity Crisis: Tomorrow's Machine Learning Crisis}
 
 Let's focus, however, on \energyJerk{}'s particular bag of tricks.
 \energyCompany{}'s algorithm was only able to recreate the jerk by
 having access to machines and devices that it shouldn't.
 
-Stuxnet is an example of how far this can go.
+Stuxnet is an example of how far this can go: a computer virus that
+specifically targeted centrifuges in Iran's nuclear program.
+%
+Stuxnet
+was a ``precision weapon---a technique for anonymously targeting a
+specific system or organization without massive collateral
+damage''~\citep{lachow-11}.
+%
+It was able to exploit security flaws in operating systems, and---like
+coffee machines in \crunchyCity{}---how specific everyday devices
+interact and interfere with each other.
 
-Machine learning is fast, efficient, and scalable.  The same artisinal
+However, StuxNet was crafted by experts of the course of years (one
+assumes, given the complexity of the source code\dots its origins are
+shrowded in secrecy).
+%
+In contrast, machine learning is fast, efficient, and scalable.
+%
+The same artisinal
 mischief that human jerks can do locally, machine learning can
 instantly reproduce globally.  
 
-\subsection{Today's Cybersecurity Crisis}
-
-The world of \series{Battlestar Galactica} provides a useful example.
-They needed computers for jumps and had plenty of electronics.  They
-religiously made sure that computers were never ever linked
+This is not to argue for abandoning all technology.
+%
+Instead, the world of Ronald D. Moore's \series{Battlestar Galactica}
+reboot provides a useful template.
+%
+They needed computers for jumps and had plenty of electronics.
+%
+They religiously made sure that computers were never ever linked
 together.\footnote{The downfall of the colonies was Gaius Baltar
   circumventing these preventative measures.}
 
 However, in the early twenty-first century, every device is linked to
-an insecure internet.  The ``Internet of things'' movement has
-proliferated the devices that are connected to the Internet:
-refrigerators, exercise machines, cars, and medical equipment.  These
-gadgets are catnip to Yuppies who live in places like \crunchyCity{}.
-And let's face it, they can do some cool stuff.
+an insecure internet.
+%
+The ``Internet of things'' movement has proliferated the devices that
+are connected to the Internet: refrigerators~\citep{tanczer-18}, cars,
+and medical equipment~\citep{yaqoob-19}.
+%
+These gadgets are catnip to Yuppies who live in places like
+\crunchyCity{}.  And let's face it, they can do some cool stuff.
 
 But we created the devices before we made our homes and Internet ready
-for them.  Ideally, each home should be a nice, insulated environments
-with controlled entry and exit.  Just like you wouldn't leave your
+for them.
+%
+Ideally, each home should be a nice, insulated environments
+with controlled entry and exit.
+%
+Just like you wouldn't leave your
 front door open all day and all night, you would not let anyone in the
 world potentially fiddle with the gadgets in your home.  
 
@@ -378,29 +429,37 @@ America's \abr{darpa}\footnote{In future chapters, much of the
   research in \abr{ai} has happened in America, and much that---like
   last century's breakthroughs in communications---has been funded by
   military organizations such as the Defense Advanced Research
-  Projects Agency.} to share data and communicate quickly.  When the
-Internet had dozens of nodes where everyone knew and trusted each
-other, you didn't have to be paranoid.
+  Projects Agency.} to share data and communicate
+quickly~\citep{leiner-09}.
+%
+When the Internet had dozens of nodes where everyone knew and trusted
+each other, you didn't have to be paranoid.
 
 This might be okay if the underlying devices were secure or
-unimportant.  We're attaching everything to the Internet and not doing
-a good job of it.  \TODO{Give lots of examples}
-
-Thus, human jerks can create all sorts of mischief.  They can spy on
-you, remotely hijack your car, and steal your money.  \TODO{Embelish
-  with details}
+unimportant.
+%
+We're attaching everything to the Internet and not doing
+a good job of it.
+%
+Bad guys can spy on you through your ``computer, home security system,
+or devices such as baby monitors''~\citep{andrews-15}, remotely hijack
+your car~\citep{miller-15}, and steal your money.
 
 Unfortunately, neither consumers nor companies really see the problem.
 Highly secure devices are annoying to the consumer:\footnote{This
   applies to commercial and residential consumers.  In both cases,
   devices will be set up by people, often non-experts, who will not
   want to put up with the hassle of making sure devices are secure.
-  This often leads to shortcuts~\cite{}.}  you need to set up
+  This often leads to shortcuts~\citep{}.}  you need to set up
 passwords, firewalls, and update the firmware consistently.  The ideal
 device is one that the user plugs in, it works, and then the user
-never has to think about it again.  Many companies can only survive if
+never has to think about it again.
+%
+Many companies can only survive if
 their next product sells, and you're not going to sell many units if
-your product is secure (and thus annoying).  Humans are bad about
+your product is secure (and thus annoying).
+%
+Humans are bad about
 estimating low-probability events and assume that they'll never have a
 security issue.
 
@@ -434,14 +493,14 @@ unintended consequences---requires input from industry (the experts),
 but this brings its own issues.
 
 People working in technology broadly like to claim that things move
-fast.\footnote{The motto of Facebook was to ``move fast and break
-  things''.}  While some of this is hype (it still takes times to get
+fast---in other words, applying the Facebook ethos to ``move fast and break
+  things''~\citep{vardi-18}.  While some of this is hype (it still takes time to get
 things right), there is some truth to this claim.  New technologies
 really do allow new business models to emerge, and these often are
-incompatible with existing legal structures.
+incompatible with existing legal structures~\citep{nieuwland-18}.
 
 Copyright law has been vexed by the remix culture made possible by
-platforms like YouTube.  Spam phone and e-mail has not kept up with
+platforms like YouTube~\citep{lessig-08}.  Spam phone and e-mail has not kept up with
 the reality of robodialers and text-to-speech.  The intrinsically
 international conception of the Internet generally is at odds with
 regional-based laws and regulation.
@@ -452,28 +511,49 @@ propose their own frameworks and guidelines, but they lack legal force
 and are ultimately voluntary.  Like the over-hyped myth of Polish
 calvary charging German tanks with lances,\footnote{The charge at
   Krojanty did involve infantry, tanks, and calvary, but the Polish
-  calvary was used effectively.} Europe's response has been mostly to
+  calvary was used effectively given the circumstances.} Europe's response has been mostly to
 fight the last war: focusing on privacy and tracking (real problems in
 many European regimes) rather than that of protecting systems.
 
 Europe's well-intentioned \abr{gdpr} response also highlights another
-critical issue: unintended consequences.  Regulatory burdens can favor
+critical issue: unintended consequences~\citep{goodman-17}.  Regulatory burdens can favor
 entrenched firms over upstarts who can't afford lawyers to oversee
 compliance and can prevent your citizens from having access to the
-rest of the world---companies might prefer to not offer service in
+rest of the world: companies might prefer to not offer service in
 your country if they don't like your laws.
 
 If the unintended consequences favor particular sectors, those sectors
-might then try to keep those regulations entrenched and static.  Then
+might then try to keep those regulations entrenched and static~\citep{croley-08}.  Then
 the regulations help that sector rather than the public.
-
-Whatever form legislation takes to solve these underlying issues, it must be well-crafted to address not just the emergent issues of today but to provide a framework to solve future issues.  In America, the Republican system and the implicit veto power of minorities in the cooling saucer of the Senate; in Europe the federal system of European regulation with explicit or implicit veto from member states; in China, the opaque consensus building between party, province, and industry\dots no modern society moves quickly.  
+%
+Whatever form legislation takes to solve these underlying issues, it
+must be well-crafted to address not just the emergent issues of today
+but to provide a framework to solve future issues.
+%
+In America, the republican\footnote{The ``r'' here is lower-case: in the
+  American republic, voters select representatives from oddly drawn
+  districts.} system and the implicit veto power of minorities in the
+cooling saucer of the Senate; in Europe the federal system of European
+regulation with explicit or implicit veto from member states; in
+China, the opaque consensus building between party, province, and
+industry\dots no modern society moves quickly.
+%
 The discrepancy in tempo is more acute when it comes to technology.
-The silver haired mandarins in Whitehall, DC, Brussels, out Beijing are often not equipped to understand the interaction between society and new technology.
+%
+The silver haired mandarins in Whitehall, DC, Brussels, out Beijing
+are often not equipped to understand the interaction between society
+and new technology.
 
-The temptation then is to abdicate the issue to more nimble agents: the military or industry.  
-These are important parts of how artificial intelligence will enter society, but they have their own interest someone at odds with the rest of society.
-The next chapters will consider how martial or commercial \abr{ai} could go wrong.
+The temptation then is to abdicate the issue to more nimble agents:
+the military or industry.
+%
+These are important parts of how artificial intelligence will enter
+society, but they have their own interest someone at odds with the
+rest of society.
+%
+The next chapters will consider how martial or commercial \abr{ai}
+could go wrong.
+
 
 \subsection{But what about Artificial Intelligence?}
 
