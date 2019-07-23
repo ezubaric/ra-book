@@ -32,6 +32,15 @@
 \newcommand{\book}[1]{\textit{#1}}
 
 
+\ifcomment
+\newcommand{\pinaforecomment}[3]{\colorbox{#1}{\parbox{.8\linewidth}{#2: #3}}}
+\else
+\newcommand{\pinaforecomment}[3]{}
+\fi
+
+\newcommand{\vkcomment}[1]{\pinaforecomment{blue}{VK}{#1}}
+
+
 \newcommand{\sectionBreak}{\par\noindent\rule{\textwidth}{0.4pt}}
 \newcommand{\quoted}[2]{\begin{quote}
     #1

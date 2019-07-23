@@ -21,6 +21,8 @@ intelligence,\footnote{Research is organized around conferences; these
   intelligence.} but unlike much of the fancifal claims of aritificial
 intelligence prophets, it actually works \emph{now}.
 
+\jbgcomment{Is there some repetition with ``actually works''?}
+
 We first introduce a key component of machine learning---objective
 functions---that define why systems act they way they do. We then show
 how bad human behavior can be mimicked by these algorithms (it's
@@ -135,6 +137,12 @@ is spam or not doesn't actually understand what it's reading, and the
 parameters were defined by a human.  While the values of the
 parameters come from data, there's no real learning going on.
 
+\jbgcomment{And sceptic would say that we have no clue what
+  intelligence really is in the first place, with none of the proposed
+  tests (e.g. Turing test) being able to withstand a minute or two of
+  hackling. Which makes me think that most of the metrics of how far
+  we are from strong AI is just a guess. }
+
 A proponent would counter that intelligence is actually a combination
 of many smaller processes.  To understand an e-mail, we need to
 understand parts of speech, syntax, discourse, and pragmatics.  Each
@@ -154,6 +162,11 @@ a virtue: it is easy to see what works and what does not.  Just as the
 objective function allows the algorithm to tune individual parameters
 to improve a single task, the clear defintion allows researchers to
 tweak problems, models, and data to get better at important tasks.
+
+\jbgcomment{I am probably minority opinion here, but I think it is
+  actually interaction of the causality inference/discovery, objective
+  function definition and scenario simulation, all of that within
+  constraint of complex systems. }
 
 Machine learning has dones well at many tasks: identifying objects in
 a picture~\citep{russakovsky-15}, playing
@@ -264,6 +277,13 @@ help decide whether or not to give a family a loan for a house.
 
 \subsection{I Learned it from You!}
 
+\vkcomment{Excellent point. Will talk about this more in person, but this is exactly why I am much more interested in combination of causality and prediction than in “fair based on statistical criteria X”. 
+I am very skeptical of the idea that the worst things humankind did are safely locked in the past and understood today, or that we even understand what is the worst we are doing today. 
+This is well past historical horizon that average AI algorithm would have today (so depending of the shelve life of the book you are writing it may not matter), but I am not limiting my concern to things that we do today and a sizable portion of people knows it is wrong, even if they are unable to change it.  
+I suspect that there is at least a chance that some of the worst things we are doing may be something that almost no-one would say is wrong, and would come as surprise that it is a problem in a first place. 
+Example - practice of medicine in middle ages was clearly barbaric and you were better of just hiding from the doctor. But how many people of that time even SUSPECTED it to be a case? What if they were not aware and thought that doctors help more than they hurt? 
+What is 21st century equivalent of 12th century medicine? I don’t know, but that is a whole point - it would be something on which my first reaction is likely to be “no way!”}
+
 Machine learning algorithms learn from examples.  \energyJerk{}'s
 monkeying with the power grid, bankers denying every minority
 borrower, or old boys' networks who only hire from ivy leage
@@ -296,6 +316,12 @@ applicant and from that can replicate past humans' prejudice while
 giving current humans the excuse of ``I'm just doing what the machine
 says''.
 
+\vkcomment{Ethics? I think that there are two separate and very rarely discussed issues with AI:
+1. When we say “fairness” today, we often talk about concrete scenarios we want AI to affect. But when we look in history, we see that there is little stability in what people considered ethical (there is so few periods in recent history when we would agree completely with practices from 50 years ago - what tells us that today is different)? We are often using an example that algorithm codified on the data 50 years ago would be bigot (and it would), but also overlook our own bias for exceptionalism of the present. Are we just coding in biases of our time in current generation of AI, and declare problem solved?
+
+2. And then there is general problem of  ALIGNMENT WITH WELL UNDERSTOOD GOALS . I think this is more important part of ethics of AI than is currently understand.
+}
+
 This is not just an academic discussion.  It is the subject of a
 subfield of machine learning focusing on fairness, accountability,
 transparency, and ethics (\abr{fate}).
@@ -308,6 +334,17 @@ One of the lessons learned from the redlining debacle is how to
 characterize these poor outcomes.  It's often worthwhile to
 distinguish disparate impacts vs. disparate
 treatment~\citep{hillier-03}.
+
+\vkcomment{True. Not to take away from attention on abhorrent  practices such is redlining, but I am wondering is this something where we see single instance of problem and fail to ask is there a larger general problem to solve behind it.
+
+ I am also looking at this as a problem of interaction of complex systems and AI. 
+
+My concern is that we are misunderstanding general problem of AI alignment and causality inference as a specific problem of fairness of outcome in some specific instances. 
+
+I think we are both not skeptical enough about algorithms coding current sets of prejudices we are having (no, I don’t buy that everyone before us was a small minded bigot but we finally got it right in all domains), nor that we are good in thinking what new problems are we creating we haven’t seen before.
+
+Example I would use - if you are paid based on guessing what people would do, and you have ability to influence them, one way to get there is to make people shallower and less willing to deal with complexity. That is something we haven’t seen much before widespread ML, but is clearly ethically problematic. 
+}
 
 \subsection{Objective Function Mismatch}
 
@@ -329,6 +366,14 @@ fire station placement and staffing based on minimizing response
 time.  This was already recorded and seems reasonable: you cannot put
 out a fire until the first fire truck gets there.
 
+\jbgcomment{Yep. This is why I say that it is question of combination of causality in the context of complex systems and ethics. 
+
+Also note that we THINK that protecting property and life would have been better objective function. What happened 20 years after we put it in (we would probably now in 10 years)? I expect it will work as good objective function. But do we really KNOW that it is right objective function? 
+
+To just point a problem with metric - what is price of human life compared to property? It is easy to say that every life is priceless, but no-one would trade all accumulated wealth of human civilization to save a single life, if for no other reason that within 10 years much more people would die as a result of that trade, for now we don’t have infrastructure and medical facilities left. 
+
+And let’s not even open a pandora box of how much price of life should be. }
+
 However, \citet{spufford-10} in \book{The Fires: How a Computer Formula,
   Big Ideas, and the Best of Intentions Burned Down New York City--and
   Determined the Future of Cities} argues that this led to poor
@@ -346,6 +391,15 @@ especially engineering your machine learning algorithm to avoid that
 malice.  Organizations can deliberately obfuscate their malice or
 inadvertently overlook it (e.g., they don't know the history of their
 data).
+
+\vkcomment{Not to beat up on this topic too much (and this is not fair to you as we both know that we don’t have technology to address this today), but malice is just part of the problem. 
+
+I look at AI evil as trifecta of:
+1. Human malice instrumented through AI
+2. Cluelessness when we could have known better  - we used reductionist thinking and we have wrong objective function on the basic level.
+3. Real ignorance - what we are doing is worse than any alternative (or even doing nothing), but it is part of the emergent behavior of the complex system and has unintended consequences. 
+
+I am not sure that 1 is more important than 2 and 3, or that most of the problems would be solved if we fix only 1. After all, taken to its logical extreme, thinking it is the case would also imply that being jerk grants you some special understanding of how to operate in the domain of controlling complex systems. }
 
 Legal regimes may be a mechanism for preventing algorithmic
 discrimination.  For example, the price of insurance can only be based
@@ -402,9 +456,7 @@ They religiously made sure that computers were never ever linked
 together.\footnote{The downfall of the colonies was Gaius Baltar
   circumventing these preventative measures.}
 
-\TODO{To make an IoT device you need: expertise in low-level HW, software, networking
-
-Typically small companies: difficult to create expertise}
+\TODO{To make an IoT device you need: expertise in low-level HW, software, networking.  Typically small companies: difficult to create expertise}
 
 However, in the early twenty-first century, every device is linked to
 an insecure internet.
@@ -552,9 +604,19 @@ industry\dots no modern society moves quickly.
 %
 The discrepancy in tempo is more acute when it comes to technology.
 %
-The silver haired mandarins in Whitehall, DC, Brussels, out Beijing
+The silver haired mandarins in Whitehall, \abr{dc}, Brussels, or Beijing
 are often not equipped to understand the interaction between society
 and new technology.
+
+\vkcomment{Who is equipped to understand that interaction? Not that mandarins in Brussels are my prime choice for wise tech leadership, but my experience in G-MAFIA and academic circles is that there was little to no a priori understanding of how last round of AI would affect society (filter bubbles). 
+
+Right now we are doing more then before, but our understanding of what tech does advanced less than tech itself. 
+
+You are one of the world’s leading experts in this area, so don’t hesitate to educate me if I got this wrong. 
+
+But right now I think we might be falling in classical trap of thinking that because we are better than in past, things are getting better. What matters is how well are we doing compared to what we need to do.
+
+Example: I might be much better operator of complex machinery then I was 40 years ago.  Little good does that do if I was driving tricycle then, and now I am strapped in in Apollo 11. I would argue my skills would be much better matched to complexity of my former than my later task at their respective times.}
 
 The temptation then is to abdicate the issue to more nimble agents:
 the military or industry.
