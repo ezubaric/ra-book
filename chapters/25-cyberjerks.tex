@@ -5,7 +5,7 @@
 
 \chapter{AI can be Jerks: Learning from the Best}
 
-The previous story saw our protagonist start her carrer, and our
+The previous story saw our protagonist start her career, and our
 essays will also begin with foundational material: what a lay user needs
 to understand what's happening in the story and how realistic it is.
 We'll save the more fanciful and complicated stuff for later chapters.
@@ -13,12 +13,12 @@ We'll save the more fanciful and complicated stuff for later chapters.
 For the moment, we focus on a facet of artificial intelligence called
 machine learning.  Machine learning is a small subset of artificial
 intelligence,\footnote{Research is organized around conferences; these
-  onferences often form a community that is protective of its turf.
+  conferences often form a community that is protective of its turf.
   While there is substantial overlap between the communities (e.g.,
   the Neural Information Processing Systems conference), many machine
   learning researchers (e.g., the International Conference on Machine
   Learning) prefer to remain distinct from ``pure'' artificial
-  intelligence.} but unlike much of the fancifal claims of aritificial
+  intelligence.} but unlike much of the fanciful claims of artificial
 intelligence prophets, it actually works \emph{now}.
 
 \jbgcomment{Is there some repetition with ``actually works''?}
@@ -32,25 +32,27 @@ action: keep your computers safe!
 \section{Learning by Doing: Objective Functions}
 \label{sec:objective-functions}
 
-Let us begin with an essential and underappreciated example of machine
-learning that simply works and makes modern life liveable: spam
+Let us begin with an essential and under-appreciated example of machine
+learning that simply works and makes modern life livable: spam
 filters.  An e-mail is either spam or not; computers think in ones and
 zeros, so let's call spam a one and not spam a zero.
 
 An algorithm does not just say ``yes'' or ``no'' to whether an e-mail
 is spam.  It typically gives a score for each e-mail: the higher the
 score, the more confident it is the e-mail is spam.  For the moment,
-let's assume that all of the numbers are between zero and one (e.g.,
-they are a probability).
+let's assume that all of the numbers are between zero and one.  This
+is convenient because we can think of this as a probability: a zero
+means that there is no chance the e-mail is spam and a one is complete
+confidence that it is spam.
 
 A perfect score would be if all spam e-mails got a 1.0 and all of the
 good e-mails got 0.0.  Both perfection and absolute certainty are
 unattainable goals, so we need to deal with both errors and
-uncertainty.  So we sum all of the spam documents---how far the
-scores are from 1.0---and we sum all of the good e-mails---how
-far the scores are from 0.0.  This sum is our \emph{objective
-  function}: a perfect score is 0.0 and the worst score is the number
-of e-mails.
+uncertainty.  So we sum all of the spam documents---how far the scores
+are from 1.0---and we sum all of the good e-mails---how far the scores
+are from 0.0.  This sum is our \emph{objective function}: a perfect
+score is 0.0---no mistakes---and the worst score is the number of
+e-mails.
 
 Machine learning algorithms are defined by \emph{parameters}.  For
 example, a parameter might define what the algorithm does when it sees
@@ -106,10 +108,10 @@ we get into the nuance of the question, the answer---given the systems
 we have discussed---is definitely \textbf{no}.  But because we'll
 discuss things that \emph{are} artificial intelligence later in the
 book, it's useful to discuss what it means for a system to be
-intelligent now.  This way, we can at least see why these systems are
+intelligent.  This way, we can at least see why these systems are
 not intelligent.
 
-In some ways, impressive achievements in technology is a moving
+In some ways, impressive achievements in technology are a moving
 target.  After a few decades of living with machines that do a
 formerly impressive task, we cease to be impressed by it and its
 comparison to humans.\footnote{This is not just for intelligence;
@@ -126,10 +128,10 @@ rare) mistakes.  Both of these were considered tasks that only humans
 could do\footnote{The term ``computer'' originally referred to
   specially trained humans proficient at high-stakes, accurate
   calculations.  \citet{light-99} documents how labor shortages during
-World War II increasingly a female profession.  However, like the
-protagonists of \book{Hidden Figures} by Margot Lee Shetterly, the
-women remain in the background.} but now are so ubiquitous that half of humanity is
-joined at the hip to devices that do both these things.
+  World War II increasingly a female profession.  However, like the
+  protagonists of \book{Hidden Figures} by Margot Lee Shetterly, the
+  women remain in the background.} but now are so ubiquitous that half
+of humanity is joined at the hip to devices that do both these things.
 
 A skeptic would say that machine learning is a mere mechanical
 mathematical exercise.  The algorithm that decides whether an e-mail
@@ -160,7 +162,7 @@ Nevertheless, machine learning has earned the reputation of being
 ``artificial intelligence that works''.  Its mechanistic definition is
 a virtue: it is easy to see what works and what does not.  Just as the
 objective function allows the algorithm to tune individual parameters
-to improve a single task, the clear defintion allows researchers to
+to improve a single task, the clear definition allows researchers to
 tweak problems, models, and data to get better at important tasks.
 
 \jbgcomment{I am probably minority opinion here, but I think it is
@@ -168,7 +170,7 @@ tweak problems, models, and data to get better at important tasks.
   function definition and scenario simulation, all of that within
   constraint of complex systems. }
 
-Machine learning has dones well at many tasks: identifying objects in
+Machine learning has done well at many tasks: identifying objects in
 a picture~\citep{russakovsky-15}, playing
 games~\citep{vinyals2017starcraft}, answering
 questions~\citep{ferruci-10}, and driving cars~\citep{thrun-10}.
@@ -191,11 +193,9 @@ aligned with business goals.
 For \energyCompany{}, this could be the number of new subscribers,
 revenue, or profits.
 %
-Other companies have different objectives:
-many web sites optimize engagement~\citep{hoiles-17}, while logistics
-companies want to minimize travel time given promises made to customers~\citep{fiat-16}.
-
-
+Other companies have different objectives: many web sites optimize
+engagement~\citep{hoiles-17}, while logistics companies want to
+minimize travel time given promises made to customers~\citep{fiat-16}.
 
 \subsection{Training Data}
 
@@ -213,7 +213,7 @@ your output~$y$ be?
 
 However, many tasks can be framed as mechanical calculations; they
 do not require abstract reasoning or generalization what people today
-consider ``intelligence''.  More specifically, they requires hundreds
+consider ``intelligence''.  In contrast, they just require hundreds
 or thousands of examples to know what to do.  \energyJerk{} is a
 prolific demonstrator of what (not) to do.  A human could learn
 \energyJerk{}'s tricks from a high-level description.  An algorithm
@@ -223,7 +223,7 @@ This simple mimicry can seem sophisticated.  It's couched in terms
 that sound sophisticated but only facilitate superficial copying
 (Figure~\ref{fig:la-ml}).  \energyCompany{} has a relatively simple
 objective function to optimize: are people buying its
-software or not?  If sales go up, it's good.  If sales go down, it's
+products or not?  If sales go up, it's good.  If sales go down, it's
 bad.  Optimizing this function without any help is a difficult problem
 (this is why \textsc{ceo}s are paid so much), but \energyCompany{}
 doesn't have to do it alone: it learned it from \energyJerk{}.
@@ -232,7 +232,7 @@ doesn't have to do it alone: it learned it from \energyJerk{}.
   \includegraphics[width=\linewidth]{figures/xkcd-la-ml}
   \caption{Much of ``Machine Learning'' is copying in the form of
     complicated equations defined by mathematical formulas using fancy
-    words like ``linear algebra'', ``gradients'', and ``nonconvex optimization''.}
+    words like ``linear algebra'', ``gradients'', and ``non-convex optimization''.}
   \label{fig:la-ml}
 \end{marginfigure}
 
@@ -240,7 +240,7 @@ doesn't have to do it alone: it learned it from \energyJerk{}.
 
 \quoted{Everybody's a jerk.  You, me, that jerk over there\dots That's
   my philosophy.}{Bender Bending Rodriguez, \series{Futurama}:
-  \episode{I, Roomate}}
+  \episode{I, Roommate}}
 
 \TODO{malice, discrimination, bias are getting used a lot.  Find a
   term and stick to it.}
@@ -263,11 +263,12 @@ Of course, laws prohibited outright discrimination in the public
 sector.  However, an important part of the housing market is
 controlled by private banks:\footnote{After the 2008 housing market
   implosion and the federal government increasingly becoming the
-  lender of last resort, this fiction is less plausible.} whether or
-not a family can get a mortgage for a house.  An overly simplified
-version of the redlining story is that if a family comes in and asks
-for a loan to buy a house in the ``wrong'' neighborhood, the bank will
-deny them the loan.
+  lender of last resort, this fiction is a flimsy veneer.  Although
+  private (sometimes local) banks originate loans, the government is
+  usually the ultimate lender.} whether or not a family can get a
+mortgage for a house.  An overly simplified version of the redlining
+story is that if a family comes in and asks for a loan to buy a house
+in the ``wrong'' neighborhood, the bank will deny them the loan.
 
 Many Americans---particularly those whose families were spared by the
 practice---aren't aware of the history of the practice.
@@ -284,10 +285,12 @@ I suspect that there is at least a chance that some of the worst things we are d
 Example - practice of medicine in middle ages was clearly barbaric and you were better of just hiding from the doctor. But how many people of that time even SUSPECTED it to be a case? What if they were not aware and thought that doctors help more than they hurt? 
 What is 21st century equivalent of 12th century medicine? I don’t know, but that is a whole point - it would be something on which my first reaction is likely to be “no way!”}
 
+\jbgcomment{Cite Amazon hiring debacle}
+
 Machine learning algorithms learn from examples.  \energyJerk{}'s
 monkeying with the power grid, bankers denying every minority
-borrower, or old boys' networks who only hire from ivy leage
-schools~\citep{}.  Just as humans can justify their actions through
+borrower, or old boys' networks who only hire from ivy league
+schools.  Just as humans can justify their actions through
 \energyCompany{}'s virtuous mission, preserving neighborhoods, or
 preserving a company's culture, machine learning algorithms can
 ``justify'' their actions with a veneer of respectability.
@@ -305,9 +308,9 @@ One of machine learning's strengths is that it can discover surprising
 correlations: e-mails sent at this hour from town are often spam,
 people stop talking about the future when they're ending a
 relationship.  This strength can conceal when a machine learning
-algorithm is doing something it ``shouldn't''.\footnote{Again, these
-  algorithms are too dumb to have a morality; this judgement is an
-  external one based on society's mores.}
+algorithm is doing something it ``shouldn't''. Again, these
+  algorithms are too dumb to have a morality; this judgment is an
+  external one based on society's mores.
 
 Take the case of redlining again.  The algorithm may not know the race
 of loan applicants.  But it might know their current address, age,
@@ -350,7 +353,7 @@ Example I would use - if you are paid based on guessing what people would do, an
 
 Another lesson from \energyCompany{}'s choices is their objective
 function: optimizing sales.  A die-hard skeptic of capitalism might
-say that this is an iherent failing of a free market system, but these
+say that this is an inherent failing of a free market system, but these
 problems are also present in planned economies~\citep{moroney-97}:
 but the objective function is being applied to a sprawling country
 instead of an individual.\footnote{\book{Red
@@ -374,14 +377,15 @@ To just point a problem with metric - what is price of human life compared to pr
 
 And let’s not even open a pandora box of how much price of life should be. }
 
-However, \citet{spufford-10} in \book{The Fires: How a Computer Formula,
-  Big Ideas, and the Best of Intentions Burned Down New York City--and
-  Determined the Future of Cities} argues that this led to poor
-outcomes for New York: not everyone called in fires at the same rate
-(or as quickly after a fire starts).  Not all calls are equal: it's
-okay if you wait to address a false alarm in favor of a blazing
+However, \citet{spufford-10} in \book{The Fires: How a Computer
+  Formula, Big Ideas, and the Best of Intentions Burned Down New York
+  City--and Determined the Future of Cities} argues that this led to
+poor outcomes for New York: not everyone called in fires at the same
+rate (or as quickly after a fire starts).  Not all calls are equal:
+it's okay if you wait to address a false alarm in favor of a blazing
 inferno.  Moreover, the first response isn't the whole story: what
-actually matters is protecting life and property.  
+actually matters is protecting life and property, but this is harder
+to quantify.
 
 \subsection{Prevention is Tough}
 
@@ -405,8 +409,11 @@ Legal regimes may be a mechanism for preventing algorithmic
 discrimination.  For example, the price of insurance can only be based
 on age.  Limiting the data that an algorithm can use prevents it from
 finding obscure correlations but also prevents the algorithm from
-doing anything useful that could, say, lower overall healthcare costs.
-These tradeoffs might be worth making, however.
+doing anything useful that could, say, lower overall healthcare
+costs.\footnote{This is also connected to the concept of
+  \emph{overfitting} in machine learning: fewer features might lead to
+  a worse objective function score but might be better in the ``real
+  world''.}  These tradeoffs might be worth making, however.
 
 Rich Caruna argues that you should not hide sensitive features to
 eliminate bias.  Instead, he argues that you should explicitly include
@@ -426,9 +433,8 @@ having access to machines and devices that it shouldn't.
 Stuxnet is an example of how far this can go: a computer virus that
 specifically targeted centrifuges in Iran's nuclear program.
 %
-Stuxnet
-was a ``precision weapon---a technique for anonymously targeting a
-specific system or organization without massive collateral
+Stuxnet was a ``precision weapon---a technique for anonymously
+targeting a specific system or organization without massive collateral
 damage''~\citep{lachow-11}.
 %
 It was able to exploit security flaws in operating systems, and---like
@@ -437,7 +443,7 @@ interact and interfere with each other.
 
 However, StuxNet was crafted by experts of the course of years (one
 assumes, given the complexity of the source code\dots its origins are
-shrowded in secrecy).
+shrouded in secrecy).
 %
 In contrast, machine learning is fast, efficient, and scalable.
 %
@@ -456,7 +462,9 @@ They religiously made sure that computers were never ever linked
 together.\footnote{The downfall of the colonies was Gaius Baltar
   circumventing these preventative measures.}
 
-\TODO{To make an IoT device you need: expertise in low-level HW, software, networking.  Typically small companies: difficult to create expertise}
+\TODO{To make an IoT device you need: expertise in low-level HW,
+  software, networking.  Typically small companies: difficult to
+  create expertise}
 
 However, in the early twenty-first century, every device is linked to
 an insecure internet.
@@ -479,7 +487,7 @@ front door open all day and all night, you would not let anyone in the
 world potentially fiddle with the gadgets in your home.  
 
 The Internet was designed as a place where everyone could be trusted.
-The Internet was designed as a resource for researchers funded by
+The Internet began as a resource for researchers funded by
 America's \abr{darpa}\footnote{In future chapters, much of the
   research into artificial intelligence will be directed by fictional
   governments for military ends.  This isn't just to make the story
@@ -546,14 +554,14 @@ enough to make sure that everyone is safe, so to protect society we
 need to make sure people are protecting themselves.
 
 Doing it right is difficult for many reasons, but here I'll talk about
-the most salient.  While innovation movies quickly, legislation
+the most salient.  While innovation moves quickly, legislation
 decidedly does not; moreover, when legislation does happen, it often
 has unintended consequences.  Refining legislation---fixing the
 unintended consequences---requires input from industry (the experts),
 but this brings its own issues.
 
 People working in technology broadly like to claim that things move
-fast---in other words, applying the Facebook ethos to ``move fast and break
+fast---in other words, applying the early Facebook ethos to ``move fast and break
   things''~\citep{vardi-18}.  While some of this is hype (it still takes time to get
 things right), there is some truth to this claim.  New technologies
 really do allow new business models to emerge, and these often are
@@ -575,7 +583,7 @@ propose their own frameworks and guidelines, but they lack legal force
 and are ultimately voluntary.  Like the over-hyped myth of Polish
 calvary charging German tanks with lances,\footnote{The charge at
   Krojanty did involve infantry, tanks, and calvary, but the Polish
-  calvary was used effectively given the circumstances.} Europe's response has been mostly to
+  calvary was used effectively given the circumstances.  \jbgcomment{add citation}} Europe's response has been mostly to
 fight the last war: focusing on privacy and tracking (real problems in
 many European regimes) rather than that of protecting systems.
 
@@ -632,16 +640,16 @@ could go wrong.
 \subsection{But what about Artificial Intelligence?}
 
 The astute reader has probably noticed that very little in this
-section has to do with \abr{ai} per se.  It's more about preventing
+section has to do with \abr{ai} \textit{per se}.  It's more about preventing
 the everyday jerks from screwing with our lives.
 
-The same good digital hygine that protects us from the common jerk
+The same good digital hygiene that protects us from the common jerk
 also prevents the scaled-up, fast-paced epidemic of \abr{ai}-driven terror.  
 
 This is why when a student comes to me who is interested in computers
 and has no idea what to do, I don't steer them to the bright shiny
 field of \abr{ai} (where I work) but rather to cybersecurity.  It is
-perhaps not as sexy, but it is what will avert the first robot apocolypse.
+perhaps not as sexy, but it is what will avert the first robot apocalypse.
 
 But frankly, these computers are pretty dumb.  What happens when they
 get a little smarter\dots something that could actually be considered
